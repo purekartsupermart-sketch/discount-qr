@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Discount Offer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f4f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .discount {
+      font-size: 48px;
+      color: #2ecc71;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>🎉 Congratulations!</h2>
+  <p>You have received</p>
+  <div class="discount" id="discount">0%</div>
+  <p>Discount on your purchase</p>
+</div>
+
+<script>
+  // Generate number between 1 and 100
+  const random = Math.floor(Math.random() * 100) + 1;
+  let discount;
+
+  if (random === 1) {
+    // 1 out of 100 → 5%
+    discount = "5%";
+  } else if (random <= 30) {
+    // 30 out of 100 → 1%
+    discount = "1%";
+  } else {
+    // Remaining → 0.5%
+    discount = "0.5%";
+  }
+
+  document.getElementById("discount").innerText = discount;
+</script>
+
+</body>
+</html>
